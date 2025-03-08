@@ -3,26 +3,26 @@ session_start();
 ?>
 
 <!-- Page 1: Email & Password Form -->
-<!-- save as page1.php -->
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <form id="formPage1">
-        <!-- Input form di sini -->
-        <button type="submit">Submit</button>
-    </form>
-    
         <h2>Login</h2>
         <label>Email:</label>
         <input type="email" name="email" required>
+        
         <label>Password:</label>
         <input type="password" name="password" required>
+        
         <button type="submit">Next</button>
     </form>
+
     <script>
         document.getElementById("formPage1").addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah reload default
