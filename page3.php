@@ -1,9 +1,20 @@
 <?php
-// Page 3: Display CV
-// save as page3.html
 session_start();
 
-// Cek apakah data sudah ada di session
+// Simpan data dari page2.php ke $_SESSION
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['fullname'] = $_POST['fullname'];
+    $_SESSION['address'] = $_POST['address'];
+    $_SESSION['organization'] = nl2br($_POST['organization']);
+    $_SESSION['experience'] = nl2br($_POST['experience']);
+    $_SESSION['education_smp'] = $_POST['education_smp'];
+    $_SESSION['education_sma'] = $_POST['education_sma'];
+    $_SESSION['education_college'] = $_POST['education_college'];
+    $_SESSION['achievements'] = nl2br($_POST['achievements']);
+    $_SESSION['skills'] = nl2br($_POST['skills']);
+}
+
+// Ambil data dari session
 $fullname = $_SESSION['fullname'] ?? '';
 $email = $_SESSION['email'] ?? '';
 $address = $_SESSION['address'] ?? '';
@@ -14,6 +25,7 @@ $education_sma = $_SESSION['education_sma'] ?? '';
 $education_college = $_SESSION['education_college'] ?? '';
 $achievements = $_SESSION['achievements'] ?? '';
 $skills = $_SESSION['skills'] ?? '';
+
 ?>
 
 <!DOCTYPE html>
