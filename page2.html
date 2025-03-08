@@ -31,7 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <form action="page3.html" method="post">
+    <form id="formPage2">
+        <!-- Input form di sini -->
+        <button type="submit">Submit</button>
+    </form>
+    
+    
         <h2>Input Biodata</h2>
         <label>Email:</label>
         <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" readonly>
@@ -53,5 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <textarea name="skills" required></textarea>
         <button type="submit">Submit</button>
     </form>
+    <script>
+        document.getElementById("formPage2").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah reload default
+            window.location.href = "page3.html"; // Pindah ke page3.html
+        });
+    </script>
 </body>
 </html>
